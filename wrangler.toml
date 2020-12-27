@@ -5,4 +5,4 @@ account_id = ""
 workers_dev = true
 zone_id = ""
 
-vars = {  kv_var_dnscount_waittime = 25000, kv_var_latestblocklisturl="https://raw.githubusercontent.com/santhosh-ponnusamy/blocklist-metadata/main/", kv_var_latestTimeStamp = "latest","kv_var_dnslog_waittime" = 20000 }
+vars = {  kv_var_dnscount_waittime = 25000, kv_var_latestblocklisturl="https://media.githubusercontent.com/media/santhosh-ponnusamy/blocklist-metadata/main/", kv_var_latestTimeStamp = "latest","kv_var_dnslog_waittime" = 20000 }
