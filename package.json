@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "name": "rethinkdns-freedns-blocklist-worker",
+  "version": "1.0.0",
+  "license": "GPL v3",
+  "description": "Rethink Free Dns with Blocklist, one click install from github to cloudflare",
+  "main": "index.js",
+  "dependencies": {
+    "wm-blocker": "^1.0.0",
+    "wm-blocklist": "^1.0.0",
+    "wm-common-members": "^1.0.0",
+    "wm-dns-packet": "^1.0.0",
+    "wm-error": "^1.0.0",
+    "wm-filter": "^1.0.0",
+    "wm-flagtagoperation": "^1.0.0",
+    "wm-lfu-cache": "^1.0.0"
+  }
+}
