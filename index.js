@@ -1,5 +1,4 @@
 var dns = require('wm-dns-packet')
-var dnslog = require('./dnslog.js')
 var Trie = require('wm-blocklist')
 var LfuOperation = require('wm-lfu-cache')
 var CreateError = require('wm-error')
@@ -98,8 +97,6 @@ async function proxyRequest(event) {
 		}	  	           
 		singleLog.time = new Date().getTime() - Starttime	
 		res.headers.set('x-nile-flags', singleLog.bl_flag)		
-		//PushDnsLog(dnslog,singleLog,event,true)
-		//PushDnsCount(dnslog,event,singleLog.uid)	
 		//res = new Response(JSON.stringify(singleLog)) 		
     }
     else{
@@ -129,37 +126,7 @@ async function proxyRequest(event) {
   res.headers.delete('cf-ray')
   return res
 }
-function remove_log_variable(singleLog){
-	delete singleLog.flow
-	delete singleLog.bl_flag
-}
 
-function PushDnsLog(dnslog,singleLog,event,to_log){
-	if(to_log){
-		remove_log_variable(singleLog)
-		dnslog.LogObj.DNSBulkLog.push(singleLog)
-		if(!dnslog.LogObj.logblock){
-			event.waitUntil(dnslog.logThreadBlock())
-		}
-	}
-}
-
-function PushDnsCount(dnslog,event,ckey){
-	let obj = dnslog.DnsCountObj.DNSCount.get(ckey)
-	if(obj){
-		obj.count++
-	}
-	else{
-		obj = {}
-		obj.count = 1
-		obj.dt = new Date().toISOString()
-		obj.ckey = ckey
-		dnslog.DnsCountObj.DNSCount.set(ckey,obj)
-	}
-	if(!dnslog.DnsCountObj.block){
-		event.waitUntil(dnslog.dnscountThreadBlock())
-	}	
-}
 async function forwardDnsMessage(request) {
   let u = new URL(request.url)
   u.hostname = "cloudflare-dns.com"
