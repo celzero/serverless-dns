@@ -1,18 +1,26 @@
 {
   "private": true,
-  "name": "rethinkdns-freedns-blocklist-worker",
+  "name": "serverless-dns",
   "version": "1.0.0",
-  "license": "GPL v3",
+  "license": "MPL-2.0",
   "description": "Rethink Free Dns with Blocklist, one click install from github to cloudflare",
   "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/celzero/oneclick-worker-dns-resolver.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/celzero/oneclick-worker-dns-resolver/issues"
+  },
+  "homepage": "https://github.com/celzero/oneclick-worker-dns-resolver#readme",
   "dependencies": {
-    "wm-blocker": "^1.0.0",
-    "wm-blocklist": "^1.0.0",
-    "wm-common-members": "^1.0.0",
-    "wm-dns-packet": "^1.0.0",
-    "wm-error": "^1.0.0",
-    "wm-filter": "^1.0.0",
-    "wm-flagtagoperation": "^1.0.0",
-    "wm-lfu-cache": "^1.0.0"
+    "@celzero/dns-blocker": "^1.0.0",
+    "@celzero/free-useroperation": "^1.0.0",
+    "@celzero/globalcontext": "^1.0.0",
+    "@celzero/single-request": "^1.0.0"
   }
 }

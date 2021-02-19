@@ -6,4 +6,4 @@ workers_dev = true
 zone_id = ""
 
 
-vars = {  kv_var_dnscount_waittime = 25000, kv_var_latestblocklisturl="https://media.githubusercontent.com/media/santhosh-ponnusamy/blocklist-metadata/main/", kv_var_latestTimeStamp = "latest","kv_var_dnslog_waittime" = 20000 }
+vars = {  CF_CACHE_EXPIRY_DAYS = 1, CF_CONFIG_CMS_KEY = "", CF_INFO_CMS_KEY = "", CF_USER_CMS_CACHE_TIME = 0, CF_USER_CMS_TOSS_TIME = 0, CF_LOG_FIREHOSE_STREAM = "", CF_DEBUG_FIREHOSE_STREAM = "", CF_DNSCOUNT_FIREHOSE_STREAM = "", CF_DNSLOG_WAIT_TIME = 20000, CF_DNSCOUNT_WAIT_TIME = 25000, CF_LIVELOG_END_POINT = "", CF_USER_CONFIG_CACHE_TIME = 300000, CF_BLOCKLIST_URL = "https://media.githubusercontent.com/media/santhosh-ponnusamy/blocklist-metadata/main/", CF_LATEST_BLOCKLIST_TIMESTAMP = "latest" }
