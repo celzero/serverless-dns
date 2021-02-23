@@ -22,3 +22,5 @@ jobs:
             echo "${{ secrets.CF_AWS_SECRET_KEY }}" | wrangler secret put CF_AWS_SECRET_KEY
             echo "${{ secrets.CF_AWS_REGION }}" | wrangler secret put CF_AWS_REGION
             echo "**PreCommands End**"
+        env:
+          CF_ACCOUNT_ID: ${{secrets.CF_ACCOUNT_ID}}
